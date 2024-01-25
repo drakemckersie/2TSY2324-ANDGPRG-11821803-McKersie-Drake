@@ -26,6 +26,7 @@ public class BulletShooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(o, i.transform.position, i.rotation);
+   
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))

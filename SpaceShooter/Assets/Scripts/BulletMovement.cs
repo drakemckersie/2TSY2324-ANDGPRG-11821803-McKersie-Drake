@@ -12,8 +12,17 @@ public class BulletMovement : MonoBehaviour
         rb.velocity = Vector3.back * speed;
     }
     // Update is called once per frame
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
     void Update()
     {
         Destroy(gameObject, 5f);
     }
+
+    
 }
