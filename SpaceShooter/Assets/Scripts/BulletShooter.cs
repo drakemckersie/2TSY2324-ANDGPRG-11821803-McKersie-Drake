@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class BulletShooter : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
+
     public Transform i;
     public GameObject o;
 
@@ -26,7 +29,7 @@ public class BulletShooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(o, i.transform.position, i.rotation);
-   
+            source.PlayOneShot(clip);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))

@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed;
+
+    public AudioSource source;
+    public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.position -= new Vector3(0, 0, 1) * Time.deltaTime * movementSpeed;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            source.PlayOneShot(clip);
+            SceneManager.LoadScene("RetryScene");
         }
     }
 }
