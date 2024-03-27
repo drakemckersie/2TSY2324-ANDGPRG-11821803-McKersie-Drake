@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Tower : MonoBehaviour
 {
     [SerializeField] Material towerMat;
+    //
+
+   
+
+    //
+
 
     public void Buildable()
     {
@@ -21,4 +28,11 @@ public class Tower : MonoBehaviour
         //animation
         towerMat.color = Color.white;
     }
+
+    //
+
+   
+
+
+    //
 }

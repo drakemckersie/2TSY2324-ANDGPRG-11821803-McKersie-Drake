@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject crystalCore;
     public GameObject CrystalCore { get { return crystalCore; } }
 
+    //
+    public int currency;
+    //
+
     private void Awake()
     {
         Instance = this;
@@ -16,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currency = 500;
     }
 
     // Update is called once per frame
@@ -24,4 +28,23 @@ public class GameManager : MonoBehaviour
     {
         
     }
-}
+
+    public void IncreaseCurrency(int amount)
+    {
+        currency += amount;
+    }
+
+    public bool SpendCurrency(int amount)
+    {
+        if (amount <= currency)
+        {
+            currency -= amount;
+            return true;
+        }
+        else
+        {
+            Debug.Log("Insufficient Funds.");
+            return false;
+        }
+    }
+  }

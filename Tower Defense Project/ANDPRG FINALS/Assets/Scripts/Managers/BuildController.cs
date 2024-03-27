@@ -16,28 +16,60 @@ public class BuildController : MonoBehaviour
 
     public void SpawnTower()
     {
-        GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[0]);
-        draggableTower = tempTwrObj;
-        tempTower = tempTwrObj.GetComponent<Tower>();
+        if (GameManager.Instance.currency < 500)
+        {
+            Debug.LogWarning("Insufficient Funds");
+        }
+        else
+        {
+            GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[0]);
+            draggableTower = tempTwrObj;
+            tempTower = tempTwrObj.GetComponent<Tower>();
+            GameManager.Instance.SpendCurrency(500);
+        }
     }
 
     public void SpawnTower1()
     {
-        GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[1]);
-        draggableTower = tempTwrObj;
-        tempTower = tempTwrObj.GetComponent<Tower>();
+        if (GameManager.Instance.currency < 250)
+        {
+            Debug.LogWarning("Insufficient Funds");
+        }
+        else
+        {
+            GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[1]);
+            draggableTower = tempTwrObj;
+            tempTower = tempTwrObj.GetComponent<Tower>();
+            GameManager.Instance.SpendCurrency(250);
+        }
     }
     public void SpawnTower2()
     {
-        GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[2]);
-        draggableTower = tempTwrObj;
-        tempTower = tempTwrObj.GetComponent<Tower>();
+        if (GameManager.Instance.currency < 500)
+        {
+            Debug.LogWarning("Insufficient Funds");
+        }
+        else
+        {
+            GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[2]);
+            draggableTower = tempTwrObj;
+            tempTower = tempTwrObj.GetComponent<Tower>();
+            GameManager.Instance.SpendCurrency(500);
+        }
     }
     public void SpawnTower3()
     {
-        GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[3]);
-        draggableTower = tempTwrObj;
-        tempTower = tempTwrObj.GetComponent<Tower>();
+        if (GameManager.Instance.currency < 600)
+        {
+            Debug.LogWarning("Insufficient Funds");
+        }
+        else
+        {
+            GameObject tempTwrObj = (GameObject)Instantiate(prefabTowers[3]);
+            draggableTower = tempTwrObj;
+            tempTower = tempTwrObj.GetComponent<Tower>();
+            GameManager.Instance.SpendCurrency(600);
+        }
     }
 
     Vector3 SnaptoGrid(Vector3 towerPos)
@@ -57,11 +89,11 @@ public class BuildController : MonoBehaviour
       //     Debug.DrawLine(ray.origin, hit.point);
      //   }
 
-        if(draggableTower != null)
+        if(draggableTower != null )
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit))
+            if(Physics.Raycast(ray, out hit ) )
             {
                 draggableTower.transform.position = SnaptoGrid(hit.point);
                 if(hit.point.y > buildableOffsetY)

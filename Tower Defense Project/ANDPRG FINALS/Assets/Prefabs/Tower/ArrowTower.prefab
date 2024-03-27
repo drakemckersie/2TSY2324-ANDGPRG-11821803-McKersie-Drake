@@ -246,9 +246,11 @@ GameObject:
   - component: {fileID: 1924510490537436297}
   - component: {fileID: 1924510490527648609}
   - component: {fileID: 3533107066395264942}
+  - component: {fileID: 7881073892426350395}
+  - component: {fileID: -2011531174363042365}
   m_Layer: 2
   m_Name: ArrowTower
-  m_TagString: Untagged
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,3 +305,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerMat: {fileID: 2100000, guid: 1d2973fc35558e8429f8aebc0b06bafb, type: 2}
+--- !u!114 &7881073892426350395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924510490537015465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d51471f8b52525479afb3c5c1293ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  core: {fileID: 1924510490537015465}
+  gun: {fileID: 1924510490537015461}
+  turningSpeed: 20
+  angleTurningAccuracy: 80
+  projectilePrefab: {fileID: 127560, guid: 4f593463d6d1fd34d9a1a0c28624abaf, type: 3}
+  firePoint: {fileID: 1924510490537436289}
+--- !u!135 &-2011531174363042365
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924510490537015465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
