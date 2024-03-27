@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
    
     [SerializeField] NavMeshAgent agent;
     [SerializeField] MonsterType monsterType;
+    public CrystalHealth health;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,6 +36,9 @@ public class Enemy : MonoBehaviour
             SpawnerController.Instance.RemoveEnemy(this);
             SpawnerController.onEnemyDestroy.Invoke();
             Destroy(this.gameObject);
+
+        
+          // health.TakeDamage(5f);
         }
     }
 }
