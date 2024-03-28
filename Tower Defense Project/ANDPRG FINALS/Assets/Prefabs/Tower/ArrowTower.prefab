@@ -319,8 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   core: {fileID: 1924510490537015465}
   gun: {fileID: 1924510490537015461}
-  turningSpeed: 20
-  angleTurningAccuracy: 80
+  turningSpeed: 30
+  angleTurningAccuracy: 100
   projectilePrefab: {fileID: 127560, guid: 4f593463d6d1fd34d9a1a0c28624abaf, type: 3}
   firePoint: {fileID: 1924510490537436289}
 --- !u!135 &-2011531174363042365

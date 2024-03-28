@@ -7,11 +7,13 @@ using TMPro;
 public class Menu : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI currencyUI;
-  //  [SerializeField] TextMeshProUGUI crystalHealth;
-   // CrystalHealth health;
+    [SerializeField] TextMeshProUGUI crystalHealth;
+    [SerializeField] TextMeshProUGUI waveCounter;
+    // CrystalHealth health;
     private void OnGUI()
     {
         currencyUI.text = GameManager.Instance.currency.ToString();
-       // crystalHealth.text = health.hitPoints.ToString();
+        crystalHealth.text = GameManager.Instance.hitPoints.ToString();
+        waveCounter.text = SpawnerController.Instance.currentWave.ToString();
     }
 }

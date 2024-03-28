@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class GameManager : MonoBehaviour
 
     //
     public int currency;
+
+    public float hitPoints = 100f;
+    string currentSceneName;
     //
 
     private void Awake()
     {
         Instance = this;
+        string currentSceneName = SceneManager.GetActiveScene().name;
     }
 
     // Start is called before the first frame update
@@ -47,4 +52,15 @@ public class GameManager : MonoBehaviour
             return false;
         }
     }
-  }
+
+    public void TakeDamage(float dmg)
+   {
+       hitPoints -= dmg;
+
+          if (hitPoints <= 0)
+          {
+             SceneManager.LoadScene("GameScene");
+         }
+      }
+
+}

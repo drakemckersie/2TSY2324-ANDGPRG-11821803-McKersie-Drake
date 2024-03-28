@@ -21,7 +21,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private float difficultyScaling = 0.75f;
     [SerializeField] private float enemiesPerSecondCap = 5f;
 
-    private int currentWave = 1;
+    public int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;

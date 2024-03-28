@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
 
         
-          // health.TakeDamage(5f);
+          GameManager.Instance.TakeDamage(5f);
         }
     }
 }
